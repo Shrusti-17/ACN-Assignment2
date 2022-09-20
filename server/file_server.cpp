@@ -14,6 +14,7 @@
 
 using namespace std;
 
+// sendfile
 int sendFile(FILE *fp, int newSock)
 {
     // To send the file size to client

@@ -20,7 +20,7 @@ int sendFile(FILE *fp, int newSock)
     // To send the file size to client
     // (so that once it receives that much number of bytes it can close writing to file)
 
-    fseek(fp, 0, SEEK_END); // pointing to the end of file using fseek()
+    fseek(fp, 0, SEEK_END);                           // pointing to the end of file using fseek()
     const long fileSize = ftell(fp);
     cout << "Filesize (in Bytes) = " << fileSize << endl;
 
@@ -30,7 +30,7 @@ int sendFile(FILE *fp, int newSock)
     // converting to char array from integer because buffer stores char
     int n = fileSize;
     int i = 0;
-    string temp_str = to_string(n); // converting number to a string
+    string temp_str = to_string(n);                    // converting number to a string
     char const *number_array = temp_str.c_str();
     cout << "number_array = " << number_array << endl;
 
@@ -109,7 +109,7 @@ void processRequest(int sockFd)
 
 int main()
 {
-    //char *ip = "127.0.0.1";
+    
     int port = 8004;
     int nRet = 0;
 
@@ -149,7 +149,7 @@ int main()
     struct sockaddr_in srv;
     srv.sin_family = AF_INET;
     srv.sin_port = htons(port);
-    srv.sin_addr.s_addr = inet_addr("172.19.125.149");
+    srv.sin_addr.s_addr = inet_addr("127.0.0.1");
     memset(&(srv.sin_zero), 0, 8);
 
     // binding socket to address

@@ -98,7 +98,7 @@ int main()
 
         // recv() for message saying request is getting processed
         recv(sockFd, buffer, SIZE, 0);
-        cout << "Buff = " << buffer << endl;
+        cout << "Message received from server is : " << buffer << endl;
 
         cout << "Enter filepath for the request object: " << endl;
         fgets(buffer, SIZE, stdin);
